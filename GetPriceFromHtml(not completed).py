@@ -2,6 +2,17 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
 
+'''Selenium kullanmamızın sebebi get requestini sitelerin güvenlik sebebiyle reddetmesi. Eğer onu kullanmasaydık yalnızca request modülü ile şu şekilde de bs4 kullanabilirdik:
+import requests
+
+url = "sitenin url'si"
+headers = "Siteye gönderilen request'in bir tarayıcıdan olduğunu belirleyen uyarı. Bu uyarıyı sayfayı incelerken network kısmında bulabiliriz.
+html = request.get(url, headers=headers).content
+soup = BeautifulSoup(html, html.parser)
+
+böylece yalnızca request modülü ile de bs4 kullanabilirdik.
+'''
+
 #start with web browser
 browser=webdriver.Chrome()
 
